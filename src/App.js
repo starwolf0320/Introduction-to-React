@@ -1,7 +1,12 @@
 import { useEffect, useState } from "react";
 import CoinGecko from 'coingecko-api'
+import authService from "./services/authentication"
 
 function App() {
+  const [user, setUser] = useState(() => {
+    return authService.getUser()
+  })
+
   const [coins, setCoins] = useState(null)
 
   useEffect(() => {
@@ -22,8 +27,24 @@ function App() {
 
   }, [])
 
+  function handleLogout() {
+    authService.logout()
+    setUser(null)
+  }
+
+  function handleLogin() {
+    const user = authService.login()
+    setUser(user)
+  }
+
   return (
     <div>
+      {user ? (
+        <button onClick={handleLogout}>Logout</button>
+      ) : (
+        <button onClick={handleLogin}>Login</button>
+      )}
+     
       {coins && (
         <ul>
           {coins.map(coin => {
