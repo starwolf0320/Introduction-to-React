@@ -1,21 +1,9 @@
-import { useState } from "react";
+import { useContext } from "react";
 import { Link } from "react-router-dom";
-import authService from "../services/authentication"
+import { AuthContext } from '../contexts/AuthContext'
 
 export function Navbar() {
-    const [user, setUser] = useState(() => {
-      return authService.getUser()
-    })
-  
-    function handleLogout() {
-      authService.logout()
-      setUser(null)
-    }
-  
-    function handleLogin() {
-      const user = authService.login()
-      setUser(user)
-    }
+    const { user, login, logout } = useContext(AuthContext)
   
     return (
       <nav className="py-5 flex items-center justify-between">
@@ -26,10 +14,10 @@ export function Navbar() {
         </ul>
         {user ? (
           <button className="px-3 py-2 bg-gray-100 text-gray-800 hover:bg-gray-200 rounded-md" 
-          onClick={handleLogout}>Logout</button>
+          onClick={logout}>Logout</button>
         ) : (
           <button className="px-3 py-2 bg-gray-100 text-gray-800 hover:bg-gray-200 rounded-md" 
-          onClick={handleLogin}>Login</button>
+          onClick={login}>Login</button>
         )} 
       </nav>
     )
