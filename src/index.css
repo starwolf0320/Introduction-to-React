@@ -7,7 +7,9 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.coin-list-item {
+  margin-top: 5px;
+  margin-bottom: 5px;
+  border: #f6f6f6;
+  padding: 3px;
 }
