@@ -18,17 +18,19 @@ export function Navbar() {
     }
   
     return (
-      <nav>
-        {user ? (
-          <button onClick={handleLogout}>Logout</button>
-        ) : (
-          <button onClick={handleLogin}>Login</button>
-        )} 
+      <nav className="py-5 flex items-center justify-between">
         <ul>
           <li>
-            <Link to="/">Home</Link>
+            <Link to="/" className="text-blue-500 hover:text-blue-600">Home</Link>
           </li>
         </ul>
+        {user ? (
+          <button className="px-3 py-2 bg-gray-100 text-gray-800 hover:bg-gray-200 rounded-md" 
+          onClick={handleLogout}>Logout</button>
+        ) : (
+          <button className="px-3 py-2 bg-gray-100 text-gray-800 hover:bg-gray-200 rounded-md" 
+          onClick={handleLogin}>Login</button>
+        )} 
       </nav>
     )
   }

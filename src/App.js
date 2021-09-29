@@ -10,7 +10,7 @@ import { Coin } from './components/Coin'
 export default function App() {
   return (
     <Router>
-      <div>
+      <div className="max-w-4xl mx-auto px-4 sm:px-6">
         <Navbar />
         <Switch>
           <Route path="/" exact>
