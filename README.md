@@ -9,9 +9,9 @@
   </p>
 </p>
 
-# Getting started with Django
+# Getting started with React
 
-This is the code from the course "Getting Started With Django", found on YouTube and JustDjango
+This is the code from the course "Getting Started With React", found on [JustDjango](https://learn.justdjango.com)
 
 ---
 
