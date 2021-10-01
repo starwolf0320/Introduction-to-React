@@ -9,9 +9,9 @@
   </p>
 </p>
 
-# Getting started with React
+# Intro to React
 
-This is the code from the course "Getting Started With React", found on [JustDjango](https://learn.justdjango.com)
+This is the code from the course "Intro to React", found on [JustDjango](https://learn.justdjango.com)
 
 ---
 
